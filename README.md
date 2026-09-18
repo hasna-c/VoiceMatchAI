@@ -137,7 +137,7 @@ Allow microphone access when the browser asks for permission.
 3. Select **Compare Voices**.
 4. Review the result and similarity details.
 
-For more consistent comparisons, use the same microphone, distance, room, and speaking style for both samples. File uploads are generally more stable than live browser recordings.
+
 
 ## Model
 
