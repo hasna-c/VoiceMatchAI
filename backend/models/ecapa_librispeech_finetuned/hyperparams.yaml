@@ -1,0 +1,16 @@
+seed: 1234
+use_tensorboard: false
+embedding_model: !new:speechbrain.lobes.models.ECAPA_TDNN.ECAPA_TDNN
+  input_size: 80
+  channels: [1024, 1024, 1024, 1024, 3072]
+mean_var_norm:
+  mean_norm: true
+  std_norm: true
+
+# Required by EncoderClassifier.from_hparams()
+pretrainer: !new:speechbrain.utils.parameter_transfer.Pretrainer
+  collect_in: .
+  loadables:
+    embedding_model: !ref <embedding_model>
+  paths:
+    embedding_model: embedding_model.ckpt

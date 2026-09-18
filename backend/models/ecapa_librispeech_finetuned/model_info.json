@@ -1,0 +1,4 @@
+{
+  "model_name": "ecapa_librispeech_finetuned",
+  "architecture": "ECAPA-TDNN"
+}

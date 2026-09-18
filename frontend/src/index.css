@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-surface: #131315;
+  --color-surface-container: #201f21;
+  --color-surface-high: #2a2a2c;
+  --color-primary-cyan: #00f5ff;
+  --color-secondary-purple: #a100f0;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-glow {
+  background: linear-gradient(180deg, rgba(0, 245, 255, 0.06) 0%, rgba(161, 0, 240, 0.03) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.08);
+}
+
+.glow-cyan-btn {
+  background: #00cbd3;
+  color: #002021;
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: all 0.2s ease-in-out;
+}
+
+.glow-cyan-btn:hover {
+  background: #35dce1;
+  box-shadow: 0 0 26px rgba(0, 245, 255, 0.35), 0 0 12px rgba(161, 0, 240, 0.18);
+  transform: translateY(-0.5px);
+}
+
+@keyframes barPulse {
+  0%, 100% {
+    transform: scaleY(0.5);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-bar-pulse {
+  animation: barPulse 1.2s infinite ease-in-out;
+}
