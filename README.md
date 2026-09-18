@@ -33,17 +33,17 @@ The application combines a React interface, a FastAPI inference service, and a l
 ## Project Architecture
 
 ```text
-+------------------+      HTTP multipart      +----------------------+ 
-| React + Vite UI  | ----------------------> | FastAPI backend      | 
-| Upload / record  |                        | /api/verify          | 
-+------------------+                        +-----------+----------+ 
-                                                          | 
-                                                          | 
-                                                          v 
-                                               +----------------------+ 
-                                               | ECAPA-TDNN inference | 
-                                               | Embeddings + scoring | 
-                                               +----------------------+ 
++-------------------+      HTTP multipart     +----------------------+
+| React + Vite UI   | ----------------------> | FastAPI backend      |
+| Upload / record   |                         | /api/verify          |
++-------------------+                         +-----------+----------+
+                                                       |
+                                                       |
+                                                       v
+                                            +----------------------+
+                                            | ECAPA-TDNN inference |
+                                            | Embeddings + scoring |
+                                            +----------------------+
 ```
 
 ## File Structure
