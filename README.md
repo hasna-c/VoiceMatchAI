@@ -33,47 +33,50 @@ The application combines a React interface, a FastAPI inference service, and a l
 ## Project Architecture
 
 ```text
-+------------------+       HTTP multipart       +-----------------------+
-| React + Vite UI  | -------------------------> | FastAPI backend       |
-| Upload / record  |                            | /api/verify           |
-+------------------+                            +-----------+-----------+
-                                                            |
-                                                            v
-                                                +-----------------------+
-                                                | ECAPA-TDNN inference  |
-                                                | Embeddings + scoring  |
-                                                +-----------------------+
++------------------+      HTTP multipart      +----------------------+ 
+| React + Vite UI  | ----------------------> | FastAPI backend      | 
+| Upload / record  |                        | /api/verify          | 
++------------------+                        +-----------+----------+ 
+                                                          | 
+                                                          | 
+                                                          v 
+                                               +----------------------+ 
+                                               | ECAPA-TDNN inference | 
+                                               | Embeddings + scoring | 
+                                               +----------------------+ 
 ```
 
 ## File Structure
 
 ```text
 VoiceMatchAI/
-|-- backend/
-|   |-- app.py
-|   |-- model_inference.py
-|   |-- requirements.txt
-|   `-- models/
-|       `-- ecapa_librispeech_finetuned/
-|           |-- embedding_model.ckpt
-|           |-- hyperparams.yaml
-|           |-- model_info.json
-|           `-- version
-|-- frontend/
-|   |-- package.json
-|   |-- vite.config.ts
-|   `-- src/
-|       |-- App.tsx
-|       |-- Header.tsx
-|       |-- index.css
-|       |-- types.ts
-|       `-- components/
-|           |-- SimilarityResult.tsx
-|           `-- VoiceCard.tsx
-|-- notebook/
-|   `-- ecapa-tdnn-librispeech-fine-tuning-evaluation.ipynb
-|-- .gitignore
-`-- README.md
+├── backend/
+│   ├── app.py
+│   ├── model_inference.py
+│   ├── requirements.txt
+│   └── models/
+│       └── ecapa_librispeech_finetuned/
+│           ├── embedding_model.ckpt
+│           ├── hyperparams.yaml
+│           ├── model_info.json
+│           └── version
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── src/
+│       ├── App.tsx
+│       ├── Header.tsx
+│       ├── index.css
+│       ├── types.ts
+│       └── components/
+│           ├── SimilarityResult.tsx
+│           └── VoiceCard.tsx
+├── notebook/
+│   └── ecapa-tdnn-librispeech-fine-tuning-evaluation.ipynb
+├── .gitignore
+├── README.md
+└── demo/
+    └── Screenshot 2026-09-18 102449.png
 ```
 
 ## Evaluation
