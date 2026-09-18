@@ -114,7 +114,7 @@ Leave this terminal running.
 
 ### Start the frontend
 
-Open a second terminal:
+
 
 ```powershell
 cd frontend
